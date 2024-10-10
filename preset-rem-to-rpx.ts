@@ -7,7 +7,7 @@ function remToRpxPreset(options: Options = {}) {
   const { baseFontSize = 16 } = options;
   return {
     name: '@unocss/preset-rem-to-rpx',
-    postprocess: (util) => {
+    postprocess: (util: { entries: any[] }) => {
       util.entries.forEach((i) => {
         const value = i[1];
         if (value && typeof value === 'string' && remRE.test(value))
