@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from 'node:fs';
 
 const pagesStr = fs.readFileSync('./src/pages.json', 'utf-8');
 const pagesJson = JSON.parse(pagesStr);
@@ -38,13 +38,11 @@ function addPages(pages) {
     const createStream = fs.createWriteStream(filePath);
 
     const template = `<template>
-  <view>${title}</view>
-</template>
-
-<script setup lang="ts" name="${name}"></script>
-
-<style scoped></style>
-`;
+                          <view>${title}</view>
+                      </template>
+                        <script setup lang="ts" name="${name}"></script>
+                        <style scoped></style>
+                      `;
     createStream.write(template);
     createStream.end();
     console.log('\x1B[34m', `pages ${name} created successfully.`);
