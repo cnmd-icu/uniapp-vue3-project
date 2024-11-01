@@ -7,7 +7,7 @@ indent_style = space
 #缩进大小2
 indent_size = 2
 #换行符lf
-end_of_line = lf
+end_of_line = lf #LF是Unix和Linux系统使用的换行符，CRLF是Windows系统使用的换行符
 #字符集utf-8
 charset = utf-8
 #是否删除行尾的空格
